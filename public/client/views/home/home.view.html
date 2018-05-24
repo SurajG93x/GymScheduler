@@ -1,0 +1,89 @@
+<!--<nav class="navbar navbar-default navbar-fixed-top">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-header">-->
+
+            <!--<p class="navbar-brand" href="#" style="color: red;">-->
+                <!--Gym Scheduler-->
+            <!--</p>-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+<nav class=" header-style navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <div  class=" col-md-4">
+        <a href="#/home" class="navbar-brand">Gym Scheduler
+        </a>
+        <a href="#/home">
+        <img src="../../../gymImg.jpeg" style="height: 45px;width: 45px"/>
+        </a>
+    </div>
+
+    <div  class=" col-md-7" >
+
+    </div>
+
+
+
+</nav>
+
+
+<h2 align="center"  style="margin-top: 300px; color: red">Gym Scheduler</h2>
+
+<br>
+
+
+    <div align="center" class="container">
+        <div class="input-group" style="margin-bottom: 10px">
+            <!--<input type="text" ng-model="searchString" class="form-control" placeholder="Search for Equipments, Trainers and Classes" />-->
+
+
+            <input type="text" name="country" id="country" ng-model="country" ng-keyup="complete(country)" class="form-control" placeholder="Search for Gym Equipments" />
+            <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">
+                <li class="list-group-item" ng-repeat="countrydata in filterCountry" ng-click="fillTextbox(countrydata)">{{countrydata}}</li>
+            </ul>
+
+            <span class="input-group-btn">
+
+                <a ng-click="model.search(country)" class="btn btn-default" style="height: 34px">
+                     <span class="glyphicon glyphicon-search"></span>
+                </a>
+             </span>
+
+        </div>
+
+
+        <br>
+
+
+        <a href="/auth/google" class="btn btn-danger " style="width: 250px">
+            <span class="fa fa-google-plus" ></span>
+           <b> Login</b>
+        </a>
+        <br>
+        <br>
+
+        <p>Please Login With your Husky ID</p>
+
+    </div>
+
+
+<div style="position: fixed; bottom: 100px; width:100%; text-align: center">
+    <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="font-size: medium">About</a> &nbsp; &nbsp;
+    <a href="https://github.com/snmsoodan/HCI" style="font-size: medium">Github</a> &nbsp; &nbsp;
+    <a data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample" style="font-size: medium">Contact Us</a> &nbsp; &nbsp;
+</div>
+
+<div class="collapse" id="collapseExample" style="position: fixed; bottom: 150px; width:100%; text-align: center">
+    <div class="card card-block" style="font-size: medium">
+        With the Gym Scheduler you’d never have to worry about the availability of any of the machines. With as much as three clicks, you can schedule any instrument of your choice for a limited time.
+    </div>
+</div>
+
+
+<div class="collapse" id="collapseExample1" style="position: fixed; bottom: 70px; width:100%; text-align: center">
+    <div class="card card-block">
+       Sanamdeep Singh: singh.sa@husky.neu.edu, &nbsp;&nbsp;   Shubham Gupta: gupta.shub@husky.neu.edu,   &nbsp;&nbsp; Suraj Gutti: gutti.s@husky.neu.edu,   &nbsp;&nbsp; Ala Ebrahimi: ebrahimi.a@husky.neu.edu
+    </div>
+</div>

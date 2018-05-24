@@ -1,0 +1,155 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <p class="navbar-brand" href="#" style="color: red;">
+                Gym Scheduler
+            </p>
+
+            <div class="input-group pull-right" style="margin-top: 10px; width: 800px">
+                <input type="text" class="form-control" placeholder="Search for Equipments, Trainers and Classes">
+                <span class="input-group-btn">
+        <!- -<button class="btn btn-default" type="button">Go!</button>-->
+                <a href="#/type/Abs/instrument/Adjustable Sit Up Benches" class="btn btn-default" style="height: 34px">
+          <span class="glyphicon glyphicon-search"></span>
+                </a>
+      </span>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" style="margin-top: 50px;background-color: darkgrey">
+    <div class="container-fluid" style="align-items: center">
+
+        <div class="col-md-3 text-center" >
+
+            <a style="text-align: center" href="#/category" role="button">
+
+                <h4 style="color: black"> <span class="glyphicon glyphicon-th-list"></span>
+                    Category</h4>
+            </a>
+        </div>
+        <div class="col-md-3 text-center" >
+            <a style="text-align: center" href="#/dashboard" role="button">
+                <h4 style="color: black">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    Dashboard</h4>
+            </a>
+        </div>
+        <div class="col-md-3 text-center" >
+            <a style="text-align: center" href="#/profile" role="button">
+                <h4 style="color: black">
+                    <span class="glyphicon glyphicon-user"></span>
+                    Profile</h4>
+            </a>
+        </div>
+        <div class="col-md-3 text-center" >
+            <a style="text-align: center" ng-click="model.logout()" role="button">
+                <h4 style="color: black">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Logout</h4>
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+
+<div align="center" class="container-fluid" style="margin-top: 200px;">
+    <div class="col-md-4 text-center" >
+        <H2>Dashboard:</H2>
+    </div>
+</div>
+
+<div align="center" class="container" style="margin-top: 20px;">
+
+    <div class="col-md-12">
+        <div class="col-md-2" >
+                <label class="radio-inline">Bench Press</label>
+        </div>
+
+        <div class="col-md-2" >
+            <label class="radio-inline">Fly Machine</label>
+        </div>
+
+        <div class="col-md-2" >
+            <label class="radio-inline">Dumble Kit</label>
+        </div>
+
+        <div class="col-md-2" >
+            <label class="radio-inline">Dip Machine</label>
+        </div>
+
+        <div class="col-md-2" >
+            <label class="radio-inline">Chest Press Machine</label>
+        </div>
+
+    </div>
+
+
+
+
+    <div>
+        <div class="col-md-2" ng-switch=model.ins.a1>
+            <div ng-switch-when="t">
+                <label class="radio-inline"><input type="radio" name="optradio">{{model.ins.n1}}</label>
+            </div>
+            <div ng-switch-when="f">
+                    <label class="radio-inline"><input type="radio" name="optradio" disabled>{{model.ins.n1}}</label>
+            </div>
+         </div>
+
+        <div class="col-md-2" ng-switch=model.ins.a2>
+            <div ng-switch-when="t">
+                <label class="radio-inline"><input type="radio" name="optradio">{{model.ins.n2}}</label>
+            </div>
+            <div ng-switch-when="f">
+                <label class="radio-inline"><input type="radio" name="optradio" disabled>{{model.ins.n2}}</label>
+            </div>
+        </div>
+
+        <div class="col-md-2" ng-switch=model.ins.a3>
+            <div ng-switch-when="t">
+                <label class="radio-inline"><input type="radio" name="optradio">{{model.ins.n3}}</label>
+            </div>
+            <div ng-switch-when="f">
+                <label class="radio-inline"><input type="radio" name="optradio" disabled>{{model.ins.n3}}</label>
+            </div>
+        </div>
+
+        <div class="col-md-2" ng-switch=model.ins.a4>
+            <div ng-switch-when="t">
+                <label class="radio-inline"><input type="radio" name="optradio">{{model.ins.n4}}</label>
+            </div>
+            <div ng-switch-when="f">
+                <label class="radio-inline"><input type="radio" name="optradio" disabled>{{model.ins.n4}}</label>
+            </div>
+        </div>
+
+        <div class="col-md-2" ng-switch=model.ins.a5>
+            <div ng-switch-when="t">
+                <label class="radio-inline"><input type="radio" name="optradio">{{model.ins.n5}}</label>
+            </div>
+            <div ng-switch-when="f">
+                <label class="radio-inline"><input type="radio" name="optradio" disabled>{{model.ins.n5}}</label>
+            </div>
+        </div>
+
+
+
+    <div class="col-md-2">
+        <a href="" class="btn btn-primary btn-block" >Cancel</a>
+    </div>
+
+
+    </div>
+
+
+</div>

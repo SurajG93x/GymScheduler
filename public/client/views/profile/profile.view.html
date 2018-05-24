@@ -1,0 +1,118 @@
+<nav class=" header-style navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <div  class=" col-md-4">
+        <a href="#/category/Abs" class="navbar-brand">Gym Scheduler</a>
+        <a href="#/home">
+            <img src="../../../gymImg.jpeg" style="height: 45px;width: 45px"/>
+        </a>
+    </div>
+
+    <div  class=" col-md-7" >
+        <div class="pull-right">
+            <div class="input-group pull-right" style="margin-top: 10px; width: 600px">
+                <input type="text" name="country" id="country" ng-model="country" ng-keyup="complete(country)" class="form-control" placeholder="Search for Gym Equipments"/>
+                <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">
+                    <li class="list-group-item" ng-repeat="countrydata in filterCountry" ng-click="fillTextbox(countrydata)">{{countrydata}}</li>
+                </ul>
+                <span class="input-group-btn">
+                        <a ng-click="model.search(country)" class="btn btn-default" style="height: 34px">
+                             <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                </span>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div  ng-show ="currentUser" class="col-md-1 pull-right" style="padding-top: 15px">
+
+        <a style="color: white;font-size: large" ng-click="model.logout()" class="fa fa-sign-out pull-right" aria-hidden="true">Log out</a>
+
+    </div>
+
+
+</nav>
+
+<div class="container-fluid" style="margin-top: 150px">
+
+    <!--{{model.categories}}-->
+    <div class="col-md-2 right-line1" >
+
+        <ul class="list-group">
+            <li class="list-group-item">
+             <a href="#/profile"><b style="font-size: large">Profile</b></a>
+            </li>
+            <li class="list-group-item">
+                <a style="font-size: large" href="#/dashboard">Dashboard</a>
+            </li>
+
+
+
+        </ul>
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                <b style="color: red;font-size: large">All Categories</b>
+            </li>
+
+            <li ng-repeat="category in model.categories" class="list-group-item"   >
+                <a ng-if="category.name==model.categoryName" href="#/category/{{category.name}}"><b>{{category.name}}</b></a>
+
+                <a ng-if="category.name!=model.categoryName" href="#/category/{{category.name}}">{{category.name}}</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="col-md-2" style="align:center" >
+
+    </div>
+
+    <div class="col-md-5" style="align:center" >
+
+        <!--<div ng-show="model.success" class="alert alert-success" role="alert">-->
+            <!--{{model.success}}-->
+        <!--</div>-->
+
+        <!--<h3 style="color: darkred">Equipments availabe under Category: {{model.categoryName}}</h3>-->
+
+        <form class="form-signin">
+
+            <div align="center" ng-show="model.success" class="alert alert-success"  role="alert">{{model.success}}</div>
+
+            <div>
+                <span><b>Username</b></span>
+                <input ng-model="model.user.username" type="text"  class="form-control" name="username" placeholder="Username" required="" autofocus="" disabled />
+            </div>
+
+            <div>
+                <span><b>Email</b></span>
+                <input ng-model="model.user.email" type="email"  class="form-control" name="username" placeholder="Email Address" required="" autofocus="" disabled />
+            </div>
+
+            <div>
+                <span><b>First Name</b></span>
+                <input ng-model="model.user.firstName" type="text" ng-model="userEmail" class="form-control" name="username" placeholder="First Name" required="" autofocus="" />
+            </div>
+
+            <div>
+                <span><b>Last Name</b></span>
+                <input ng-model="model.user.lastName" type="text" ng-model="userEmail" class="form-control" name="username" placeholder="Last Name" required="" autofocus="" />
+            </div>
+
+
+
+            <a ng-click="model.updateUser(model.user)" class="btn redBG btn-danger btn-block">Submit</a>
+
+
+        </form>
+
+    </div>
+
+
+
+
+</div>

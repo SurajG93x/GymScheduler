@@ -1,0 +1,106 @@
+<nav class=" header-style navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <div  class=" col-md-4">
+        <a href="#/category/Abs" class="navbar-brand">Gym Scheduler</a>
+        <a href="#/home">
+            <img src="../../../gymImg.jpeg" style="height: 45px;width: 45px"/>
+        </a>
+    </div>
+
+    <div  class=" col-md-7" >
+        <div class="pull-right">
+            <div class="input-group pull-right" style="margin-top: 10px; width: 600px">
+                <input type="text" name="country" id="country" ng-model="country" ng-keyup="complete(country)" class="form-control" placeholder="Search for Gym Equipments"/>
+                <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">
+                    <li class="list-group-item" ng-repeat="countrydata in filterCountry" ng-click="fillTextbox(countrydata)">{{countrydata}}</li>
+                </ul>
+                <span class="input-group-btn">
+                        <a ng-click="model.search(country)" class="btn btn-default" style="height: 34px">
+                             <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <div  ng-show ="currentUser" class="col-md-1 pull-right" style="padding-top: 15px">
+
+        <a style="color: white;font-size: large" ng-click="model.logout()" class="fa fa-sign-out pull-right" aria-hidden="true">Log out</a>
+
+    </div>
+
+    <div  ng-show ="!currentUser" class="col-md-1 pull-right" style="padding-top: 15px">
+
+        <a style="color: white;font-size: large" href="#/home" class="fa fa-sign-in pull-right" aria-hidden="true"> &nbsp;Log in</a>
+
+    </div>
+
+</nav>
+
+<div class="container-fluid" style="margin-top: 150px">
+
+    <!--{{model.categories}}-->
+    <div class="col-md-2 right-line1" >
+
+        <ul class="list-group">
+            <li class="list-group-item">
+             <a style="font-size: large" href="#/profile"> Profile</a>
+            </li>
+            <li class="list-group-item">
+                <a style="font-size: large" href="#/dashboard">Dashboard</a>
+            </li>
+        </ul>
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                <b style="color: red;font-size: large">All Categories</b>
+            </li>
+
+            <li ng-repeat="category in model.categories" class="list-group-item"   >
+                <a ng-if="category.name==model.type" href="#/category/{{category.name}}"><b style="font-size: medium">{{category.name}}</b></a>
+
+                <a ng-if="category.name!=model.type" href="#/category/{{category.name}}">{{category.name}}</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="col-md-2" style="align:center" >
+
+    </div>
+    <!--{{model.ins}}-->
+
+    <div class="col-md-5" style="align:center" >
+        <div ng-if="model.success&&!model.error" class="alert alert-success" role="alert">
+           {{model.success}}
+        </div>
+        <div ng-if="model.error" class="alert alert-danger" role="alert">
+            {{model.error}}
+        </div>
+
+        <h3 style="color: royalblue">Book Equipment for: <span style="color: red;">{{model.instrumentName}}</span></h3>
+
+        <ul class="list-group" style="margin-top: 70px">
+
+            <li ng-repeat="p in model.ins" class="list-group-item" >
+                <a>{{p.n}}</a>
+
+              <span ng-if="p.a=='t'">
+                <a ng-click="model.book(p._id,p.n)" class="btn btn-success pull-right" style="height: 29px;width: 150px">Book Instrument</a>
+              </span>
+
+              <span ng-if="p.a=='f'">
+                <a  class="btn btn-success pull-right" style="height: 29px;width: 150px" disabled="">Not Available</a>
+              </span>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+
+</div>

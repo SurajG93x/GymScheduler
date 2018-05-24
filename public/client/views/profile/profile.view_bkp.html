@@ -1,0 +1,109 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <p class="navbar-brand" href="#" style="color: red;">
+                Gym Scheduler
+            </p>
+
+            <div class="input-group pull-right" style="margin-top: 10px; width: 800px">
+                <input type="text" class="form-control" placeholder="Search for Equipments, Trainers and Classes">
+                <span class="input-group-btn">
+                <a href="#/type/Abs/instrument/Adjustable Sit Up Benches" class="btn btn-default" style="height: 34px">
+          <span class="glyphicon glyphicon-search"></span>
+                </a>
+      </span>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" style="margin-top: 50px;background-color: darkgrey">
+    <div class="container-fluid" style="align-items: center">
+
+        <div class="col-md-3 text-center" >
+
+            <a style="text-align: center" href="#/category" role="button">
+
+                <h4 style="color: black"> <span class="glyphicon glyphicon-th-list"></span>
+                    Category</h4>
+            </a>
+        </div>
+        <div class="col-md-3 text-center" >
+            <a style="text-align: center" href="#/user/{{model.id}}" role="button">
+                <h4 style="color: black">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    Dashboard</h4>
+            </a>
+        </div>
+        <div class="col-md-3 text-center" >
+            <a style="text-align: center" href="#/user/{{model.id}}" role="button">
+                <h4 style="color: black">
+                    <span class="glyphicon glyphicon-user"></span>
+                    Profile</h4>
+            </a>
+        </div>
+        <div class="col-md-3 text-center" >
+            <a style="text-align: center" ng-click="model.logout()" role="button">
+                <h4 style="color: black">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Logout</h4>
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+
+
+
+<div align="center" class="container-fluid" style="margin-top: 200px;">
+    <div class="col-md-4 text-center" >
+        <H2>Profile: </H2>
+    </div>
+</div>
+
+<!--{{model.user}}-->
+
+
+<div class="header-padding">
+
+
+    <form class="form-signin">
+
+        <div align="center" ng-show="model.success" class="alert alert-success"  role="alert">{{model.success}}</div>
+
+        <div>
+           <span><b>Username</b></span>
+           <input ng-model="model.user.username" type="text"  class="form-control" name="username" placeholder="Username" required="" autofocus="" disabled />
+        </div>
+
+        <div>
+           <span><b>Email</b></span>
+           <input ng-model="model.user.email" type="email"  class="form-control" name="username" placeholder="Email Address" required="" autofocus="" disabled />
+        </div>
+
+        <div>
+            <span><b>First Name</b></span>
+        <input ng-model="model.user.firstName" type="text" ng-model="userEmail" class="form-control" name="username" placeholder="First Name" required="" autofocus="" />
+        </div>
+
+        <div>
+            <span><b>Last Name</b></span>
+        <input ng-model="model.user.lastName" type="text" ng-model="userEmail" class="form-control" name="username" placeholder="Last Name" required="" autofocus="" />
+        </div>
+
+
+
+        <a ng-click="model.updateUser(model.user)" class="btn redBG btn-danger btn-block">Submit</a>
+
+
+    </form>
+
+</div>
